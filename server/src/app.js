@@ -2,16 +2,16 @@
 import express from 'express';
 
 // init app
-var app = express();
+const app = express();
 
 // test method
 
 app.get('/', (req, res) => {
-  res.send('Hello World!') ;
+  res.send('Hello world!');
 });
 
 // catch all unhandler errors
-app.use( (err, req, res, next) => {
+app.use((err, req, res) => {
   console.error(err.stack);
   res.status(500).send(err);
 });
